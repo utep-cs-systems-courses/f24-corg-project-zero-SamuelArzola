@@ -26,3 +26,26 @@ void print_triangle(int leftCol, int size)
   }
 }
 
+
+void print_arrow(int leftCol, int size)
+{
+  int endCol = leftCol + size;
+  for (int row = 0; row <= size; row++) {
+    int minCol = leftCol + size - row, maxCol = leftCol + size + row;
+    int col;
+    for (col = 0; col<minCol; col++) putchar(' ');
+    for (       ; col <= maxCol; col++) putchar('*');
+    putchar('\n');
+  }
+  int colStart = leftCol + size - 1;
+  int width = size / 2;
+  for (int row = 0; row <= size; row++) {
+    for (int col = 0; col < colStart; col++) {
+      putchar(' ');
+    }
+    for (int col = 0; col < width; col++) {
+      putchar('*');
+    }
+    putchar('\n');
+  }
+}
